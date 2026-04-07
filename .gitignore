@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# IDEs and Editors
+.idea/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test Reports and Artifacts
+allure-results/
+allure-report/
+junit/
+errorShots/
+test-results/
+
+# Environment variables
+.env
+
+# System files
+.DS_Store
