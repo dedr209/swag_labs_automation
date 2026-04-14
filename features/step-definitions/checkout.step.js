@@ -14,9 +14,12 @@ When(/^I navigate to the cart$/, async () => {
 });
 
 Then(/^I should see the product "([^"]*)" in the cart$/, async (productName) => {
-    const isPresent = await CartPage.isProductInCart(productName);
-    // Use WebdriverIO's built-in expect assertion
-    expect(isPresent).toBe(true);
+    const cartContents = await CartPage.getCartContents();
+
+    // Strict cart validation: there should be exactly one item total, and it matches the expected product
+    expect(cartContents.length).toBe(1);
+    expect(cartContents[0].name).toBe(productName);
+    expect(cartContents[0].quantity).toBe(1);
 });
 
 When(/^I proceed to checkout$/, async () => {

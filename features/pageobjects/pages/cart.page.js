@@ -3,18 +3,18 @@ const Page = require('./page.js')
 class CartPage extends Page {
     get checkoutButton() { return $('[data-test="checkout"]'); }
 
-    // Selects all elements containing the item names in the cart
-    get cartItemNames() { return $$('.inventory_item_name'); }
+    // Selects all elements containing the items in the cart
+    get cartItems() { return $$('.cart_item'); }
 
-    async isProductInCart(productName) {
-        const items = await this.cartItemNames;
+    async getCartContents() {
+        const items = await this.cartItems;
+        const contents = [];
         for (let item of items) {
-            const text = await item.getText();
-            if (text === productName) {
-                return true;
-            }
+            const name = await item.$('.inventory_item_name').getText();
+            const quantity = parseInt(await item.$('.cart_quantity').getText(), 10);
+            contents.push({ name, quantity });
         }
-        return false;
+        return contents;
     }
 
     async proceedToCheckout() {
