@@ -7,6 +7,7 @@ class LoginPage extends Page {
     get errorMessage() { return $('[data-test="error"]'); }
 
     async login(username, password) {
+        await this.inputUsername.waitForDisplayed();
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
