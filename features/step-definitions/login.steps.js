@@ -1,5 +1,6 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
 const LoginPage = require('../pageobjects/login.page');
+const InventoryPage = require("../pageobjects/inventory.page");
 
 Given(/^I am on the login page$/, async () => {
     await LoginPage.open();
@@ -11,7 +12,7 @@ When(/^I login with username "([^"]*)" and password "([^"]*)"$/, async (username
 
 Then(/^the login should result in (.*)$/, async (status) => {
     if (status === 'success') {
-        const inventoryContainer = await $('#inventory_container');
+        const inventoryContainer = InventoryPage.inventoryContainer;
         await expect(inventoryContainer).toBeExisting();
     } else if (status === 'failure') {
         await expect(LoginPage.errorMessage).toBeExisting();

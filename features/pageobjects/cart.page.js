@@ -1,4 +1,4 @@
-import Page from './page.js';
+const Page = require('./page.js')
 
 class CartPage extends Page {
     get checkoutButton() { return $('[data-test="checkout"]'); }
@@ -21,5 +21,4 @@ class CartPage extends Page {
         await this.checkoutButton.click();
     }
 }
-
-export default new CartPage();
+module.exports = new CartPage();

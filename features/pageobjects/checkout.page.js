@@ -1,4 +1,4 @@
-import Page from './page.js';
+const Page = require('./page')
 
 class CheckoutPage extends Page {
     // Phase 1: Information Form Locators
@@ -34,4 +34,4 @@ class CheckoutPage extends Page {
     }
 }
 
-export default new CheckoutPage();
+module.exports = new CheckoutPage();

@@ -1,4 +1,4 @@
-import Page from './page.js';
+const Page = require('./page');
 
 class InventoryPage extends Page {
     /**
@@ -9,7 +9,9 @@ class InventoryPage extends Page {
         const formattedName = productName.toLowerCase().replace(/ /g, '-');
         return $(`[data-test="add-to-cart-${formattedName}"]`);
     }
-
+    get inventoryContainer() {
+        return $('#inventory_container');
+    }
     get cartIcon() { return $('.shopping_cart_link'); }
 
     async addProductToCart(productName) {
@@ -23,4 +25,4 @@ class InventoryPage extends Page {
     }
 }
 
-export default new InventoryPage();
+module.exports = new InventoryPage();
