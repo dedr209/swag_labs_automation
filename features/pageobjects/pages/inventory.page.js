@@ -16,7 +16,7 @@ class InventoryPage extends Page {
 
     async addProductToCart(productName) {
         const button = await this.getAddToCartButton(productName);
-        await button.waitForDisplayed();
+        await button.waitForDisplayed(); // safeguard to force the code to slow down and wait for the browser's graphics to catch up.
         await button.click();
     }
 
