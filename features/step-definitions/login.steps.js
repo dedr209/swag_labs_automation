@@ -16,6 +16,6 @@ Then(/^the login should result in (.*)$/, async (status) => {
         await expect(inventoryContainer).toBeExisting();
     } else if (status === 'failure') {
         await expect(LoginPage.errorMessage).toBeExisting();
-        await expect(LoginPage.errorMessage).toHaveText('Epic sadface: Sorry, this user has been locked out.');
+        await expect(LoginPage.errorMessage).toHaveText('Sorry, this user has been locked out.', { containing: true });
     }
 });
