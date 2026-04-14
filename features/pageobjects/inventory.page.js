@@ -25,4 +25,4 @@ class InventoryPage extends Page {
     }
 }
 
-module.exports = new InventoryPage();
+module.exports = new InventoryPage('inventory.html');

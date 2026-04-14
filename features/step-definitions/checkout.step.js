@@ -5,7 +5,6 @@ const InventoryPage = require('../pageobjects/inventory.page.js');
 const CartPage = require('../pageobjects/cart.page.js');
 const CheckoutPage = require('../pageobjects/checkout.page.js');
 
-
 When(/^I add the product "([^"]*)" to the cart$/, async (productName) => {
     await InventoryPage.addProductToCart(productName);
 });

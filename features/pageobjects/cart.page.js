@@ -21,4 +21,4 @@ class CartPage extends Page {
         await this.checkoutButton.click();
     }
 }
-module.exports = new CartPage();
+module.exports = new CartPage('cart.html');

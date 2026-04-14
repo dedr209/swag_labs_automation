@@ -11,10 +11,6 @@ class LoginPage extends Page {
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
     }
-
-    open() {
-        return super.open('');
-    }
 }
 
 module.exports = new LoginPage();

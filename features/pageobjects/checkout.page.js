@@ -34,4 +34,4 @@ class CheckoutPage extends Page {
     }
 }
 
-module.exports = new CheckoutPage();
+module.exports = new CheckoutPage('checkout-step-one.html');
