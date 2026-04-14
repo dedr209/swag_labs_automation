@@ -6,7 +6,7 @@ module.exports = class Page {
     constructor(path = '') {
         this.path = path;
     }
-    open() {
-        return browser.url(`/${this.path}`);
+    async open() {
+        return await browser.url(`/${this.path}`);
     }
 }
