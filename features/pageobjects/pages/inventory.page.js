@@ -9,7 +9,6 @@ class InventoryPage extends Page {
     get inventoryContainer() {
         return $('#inventory_container');
     }
-    get cartIcon() { return $('.shopping_cart_link'); }
 
     async addProductToCart(productName) {
         const card = new ProductCard(productName);
@@ -17,7 +16,7 @@ class InventoryPage extends Page {
     }
 
     async goToCart() {
-        await this.cartIcon.click();
+        await this.shoppingCartBadge.iconBadge.click();
     }
 }
 

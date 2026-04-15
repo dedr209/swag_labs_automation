@@ -1,3 +1,5 @@
+const ShoppingCartBadgeComponent = require('../components/shoppingCartBadge.component');
+
 module.exports = class Page {
     /**
      * Opens a sub page of the page
@@ -8,5 +10,9 @@ module.exports = class Page {
     }
     async open() {
         return await browser.url(`/${this.path}`);
+    }
+
+    get shoppingCartBadge() {
+        return new ShoppingCartBadgeComponent();
     }
 }
