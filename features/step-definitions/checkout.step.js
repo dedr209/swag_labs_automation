@@ -1,9 +1,7 @@
 const { When, Then } = require('@wdio/cucumber-framework');
 const { expect } = require('@wdio/globals');
 
-const InventoryPage = require('../pageobjects/pages/inventory.page.js');
-const CartPage = require('../pageobjects/pages/cart.page.js');
-const CheckoutPage = require('../pageobjects/pages/checkout.page.js');
+const { InventoryPage, CartPage, CheckoutPage } = require('../pageobjects/pages');
 
 When(/^I add the product "([^"]*)" to the cart$/, async (productName) => {
     await InventoryPage.addProductToCart(productName);
