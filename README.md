@@ -16,7 +16,7 @@ npm install
 
 To run the WebdriverIO e2e tests, use the following command:
 ```bash
-npm run wdio
+npm test
 ```
 
 ## Reporting
